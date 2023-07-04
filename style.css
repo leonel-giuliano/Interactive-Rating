@@ -1,0 +1,191 @@
+html { color-scheme: dark; }
+
+:root {
+    --clr-pr-button: 25, 97%, 53%;
+
+    --clr-ne-tittle: 0, 0%, 100%;
+    --clr-ne-p: 215, 8%, 59%;
+    --clr-ne-circle: 210, 19%, 18%;
+    --clr-ne-background: 228, 11%, 9%;
+    --clr-ne-button-animation: 3, 97%, 45%;
+    --clr-ne-text-animation: 0, 0%, 0%;
+
+    --clr-gr-rate-card-light: 225, 14%, 16%;
+    --clr-gr-rate-card-dark: 215, 27%, 12%;
+
+    --fs-p: 15px;
+    --ff: 'Overpass', sans-serif;
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --card-tittle-size: 1.75rem;
+    --card-tran-duration: .35s;
+}
+
+@font-face {
+    font-family: 'Overpass';
+    font-display: swap;
+    src: local('Overpass Regular'),
+        url(fonts/Overpass-VariableFont_wght.ttf)
+        format('truetype');
+    font-weight: 100 900;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    font-family: var(--ff);
+    background-color: hsla(var(--clr-ne-background));
+}
+
+.grid-flow {
+    display: grid;
+    align-items: center;
+}
+
+.card {
+    box-sizing: border-box;
+    width: min(400px, 90%);
+    height: min(400px, 90%);
+    padding: 1.5rem;
+    background-image: radial-gradient(circle at top, hsla(var(--clr-gr-rate-card-light)), hsla(var(--clr-gr-rate-card-dark)));
+    border-radius: 1.5rem;
+}
+
+.rate-card {
+    grid-template-rows: 20%;
+    transition: scale var(--card-tran-duration), border-radius calc(var(--card-tran-duration)/2.5);
+    transition-timing-function: ease-in-out;
+}
+
+.circle {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    background-color: hsla(var(--clr-ne-circle));
+    border: none;
+    border-radius: 50%;
+}
+
+article { height: 100%; }
+
+.info {
+    line-height: 1.5rem;
+    color: hsla(var(--clr-ne-p));
+}
+
+.tittle {
+    font-size: var(--card-tittle-size);
+    font-weight: var(--fw-bold);
+}
+
+form {
+    --tran-duration: .3s;
+
+    height: 100%;
+}
+
+.flex-flow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating {
+    cursor: pointer;
+    font-weight: var(--fw-bold);
+    color: hsla(var(--clr-ne-p));
+    transition-property: color, background-color;
+    transition-duration: var(--tran-duration);
+}
+
+.rating:hover {
+    color: hsla(var(--clr-ne-tittle));
+    background-color: hsla(var(--clr-pr-button));
+}
+
+.select {
+    color: hsla(var(--clr-ne-tittle));
+    background-color: hsla(var(--clr-ne-p));
+}
+
+.select:hover {
+    color: hsla(var(--clr-pr-button));
+    background-color: hsla(var(--clr-ne-tittle));
+}
+
+.submit {
+    --padding: .875rem;
+
+    padding: var(--padding) 0;
+    cursor: pointer;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: .375rem;
+    background-color: hsla(var(--clr-pr-button));
+    border: none;
+    border-radius: calc(2*var(--padding));
+    transition-property: color, background-color;
+    transition-duration: var(--tran-duration);
+}
+
+.submit:hover {
+    color: hsla(var(--clr-pr-button));
+    background-color: hsla(var(--clr-ne-tittle));
+}
+
+.wrong { animation: wrong .45s ease-in-out; }
+
+@keyframes wrong {
+    25% {
+        color: hsla(var(--clr-ne-text-animation));
+        background-color: hsla(var(--clr-ne-button-animation));
+    }
+
+    33% { translate: -20px 0; }
+
+    67% { translate: 20px 0; }
+
+    75% {
+        color: hsla(var(--clr-ne-text-animation));
+        background-color: hsla(var(--clr-ne-button-animation));
+    }
+
+    100% { translate: 0 0; }
+}
+
+.thanks-card {
+    position: absolute;
+    place-items: center;
+    text-align: center;
+    border-radius: 50%;
+    scale: 0;
+    transition: scale var(--card-tran-duration), border-radius calc(var(--card-tran-duration)/2.5);
+    transition-timing-function: ease-in-out;
+    transition-delay: var(--card-tran-duration);
+}
+
+.inactive {
+    overflow: hidden;
+    border-radius: 50%;
+    scale: 0;
+}
+
+.active {
+    border-radius: 1.5rem;
+    scale: 1;
+}
+
+.result {
+    --padding-Y: .5rem;
+
+    padding: var(--padding-Y) .75rem;
+    color: hsla(var(--clr-pr-button));
+    background-color: hsla(var(--clr-ne-circle));
+    border-radius: calc(2*var(--padding-Y));
+}
+
+.attribution {
+    position: absolute;
+    top: 0;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="normalize.css">
+</head>
+<body>
+  <main class="rate-card grid-flow card">
+    <div class="circle star-container">
+      <img src="images/icon-star.svg" alt="Star" class="star">
+    </div>
+
+    <article class="grid-flow">
+      <h1 class="question tittle">How did we do?</h1>
+      <p class="info">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+    </article>
+
+    <form action="" class="grid-flow">
+      <div class="rate flex-flow">
+        <input type="button" value="1" class="rating circle">
+        <input type="button" value="2" class="rating circle">
+        <input type="button" value="3" class="rating circle">
+        <input type="button" value="4" class="rating circle">
+        <input type="button" value="5" class="rating circle">
+      </div>
+      <input type="submit" value="Submit" class="submit">
+    </form>
+  </main>
+
+  <section class="thanks-card grid-flow card">
+    <img src="images/illustration-thank-you.svg" alt="Thank You!">
+
+    <div class="result">
+      You selected 
+      <span class="points"></span>
+       out of 5
+    </div>
+
+    <h2 class="thanks tittle">Thank you!</h2>
+    <p class="info">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+  </section>
+    
+  <header class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/leonel-giuliano">Leonel Giuliano</a>.
+  </header>
+
+  <script src="script.js"></script>
+</body>
+</html>
